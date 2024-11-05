@@ -1,0 +1,11 @@
+This package contains intellectual property proprietary to MindBridge as per
+the Agreement, in addition to sample data sets, and shall be used for internal
+purposes by MindBridge clients only.
+
+You may include portions of this package in your software as needed for the
+purposes of consuming the MindBridge API.
+
+You may not redistribute this package to third parties except for the express
+purposes of the third party needing to develop software to integrate with
+MindBridge in order to further utilization of the MindBridge Software per the
+applicable Agreement.
