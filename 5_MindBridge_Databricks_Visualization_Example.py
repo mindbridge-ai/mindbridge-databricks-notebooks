@@ -47,7 +47,7 @@ print(f"{organization.name} / {engagement.name} / {analysis.name}")
 # COMMAND ----------
 
 # Define the output file path where the results will be saved
-output_file = '"[insert your target file location path here]"'
+output_file = "/Volumes/[insert your target file location path here]"
 print("Requesting Elevated Risk General Ledger Transactions")
 
 # Restart data tables to ensure the latest results are available for the analysis
@@ -109,3 +109,27 @@ df = spark.read.csv(output_file,
 # COMMAND ----------
 
 display(df)
+
+# COMMAND ----------
+
+# MAGIC %md
+# MAGIC Step 8: Store the DataFrame in a Unity Catalog table
+# MAGIC
+
+# COMMAND ----------
+
+df.write.format("delta").mode("overwrite").saveAsTable("dbwork1.91m_complex.highrisk")
+
+# COMMAND ----------
+
+# MAGIC %md
+# MAGIC ## Next steps
+# MAGIC 1. In Databricks, use notebooks to create visualizations using the table you created above.
+# MAGIC 2. Use SQL → Dashboards to create dashboards, or SQL → Genie to work with your data using natural language queries.
+# MAGIC 3. To view the analysis in the full MindBridge user interface, use the analysis URL, below.
+
+# COMMAND ----------
+
+analysis_url = f"https://{url}/app/organization/{organization.id}/engagement/{engagement.id}/analysis/{analysis.latest_analysis_result_id}"
+
+print(f"Analysis URL: {analysis_url}")
