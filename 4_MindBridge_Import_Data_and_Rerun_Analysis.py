@@ -10,7 +10,7 @@
 
 # COMMAND ----------
 
-# Install the MindBridge API
+# Use pip to install the MindBridge API
 %pip install --upgrade mindbridge-api-python-client
 %restart_python
 %pip show mindbridge-api-python-client

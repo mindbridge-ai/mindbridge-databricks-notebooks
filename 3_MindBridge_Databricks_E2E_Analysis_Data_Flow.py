@@ -10,14 +10,12 @@
 
 # COMMAND ----------
 
-# Quick method to pip install the MindBridge API
-try:
-    import mindbridgeapi as mbapi
-except ModuleNotFoundError:
-    %pip install mindbridge-api-python-client
-
-# To upgrade to the latest verison you can run. 
+# Use pip to install the MindBridge API
 %pip install --upgrade mindbridge-api-python-client
+%restart_python
+%pip show mindbridge-api-python-client
+
+import mindbridgeapi as mbapi
 
 # COMMAND ----------
 
@@ -26,7 +24,6 @@ except ModuleNotFoundError:
 
 # COMMAND ----------
 
-import mindbridgeapi as mbapi
 # Provide the MindBridge API URL and the API token (replace with your actual token)
 url = "[insert tenant].mindbridge.ai"
 token = dbutils.secrets.get(scope="mindbridge-api-tutorials", key="MINDBRIDGE_API_TOKEN")
