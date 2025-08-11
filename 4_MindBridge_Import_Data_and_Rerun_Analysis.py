@@ -10,12 +10,8 @@
 
 # COMMAND ----------
 
-# Install the MindBridge API
-%pip install --upgrade mindbridge-api-python-client
-%restart_python
-%pip show mindbridge-api-python-client
-
-import mindbridgeapi as mbapi
+# MAGIC %pip install --upgrade mindbridge-api-python-client
+# MAGIC dbutils.library.restartPython()
 
 # COMMAND ----------
 
@@ -23,6 +19,8 @@ import mindbridgeapi as mbapi
 # MAGIC We start by connecting to a MindBridge tenant. If you want to find out how to create an API key for your MindBridge tenant you can check out the guide [here](https://www.mindbridge.ai/support/api/) .
 
 # COMMAND ----------
+
+import mindbridgeapi as mbapi
 
 # Provide the MindBridge API URL and the API token (replace with your actual token)
 url = "[insert tenant].mindbridge.ai"

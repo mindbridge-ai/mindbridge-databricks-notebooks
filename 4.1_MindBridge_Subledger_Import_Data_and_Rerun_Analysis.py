@@ -19,9 +19,8 @@
 
 # COMMAND ----------
 
-# MAGIC %pip install typing_extensions==4.5.0
 # MAGIC %pip install --upgrade mindbridge-api-python-client
-# MAGIC %restart_python
+# MAGIC dbutils.library.restartPython()
 
 # COMMAND ----------
 
@@ -59,7 +58,7 @@ table_name = "vendor_demo"
 catalog_table = f"{catalog}.{schema}.{table_name}"  # e.g. dbwork1.iceberg_storage.vendor_demo
 
 # ── MindBridge Configuration ──────────────────────────────────────────────
-url = "uat-perf.mindbridge.ai"
+url = "yoursubdomain.mindbridge.ai"
 organization_id = "67eea6518242093533b1b9f7"
 engagement_id = "67eea8838242093533b1ba95"
 analysis_type_id = "67cde2c5f336d647f74307f0" # In your analysis configuration file, may require MB support.

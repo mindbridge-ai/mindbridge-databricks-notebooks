@@ -10,6 +10,11 @@
 
 # COMMAND ----------
 
+# MAGIC %pip install --upgrade mindbridge-api-python-client
+# MAGIC dbutils.library.restartPython()
+
+# COMMAND ----------
+
 import mindbridgeapi as mbapi
 
 # Provide the MindBridge API URL and the API token (replace with your actual token)

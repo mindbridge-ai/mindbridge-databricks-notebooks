@@ -19,9 +19,8 @@
 
 # COMMAND ----------
 
-# MAGIC %pip install typing_extensions==4.5.0
 # MAGIC %pip install --upgrade mindbridge-api-python-client
-# MAGIC %restart_python
+# MAGIC dbutils.library.restartPython()
 
 # COMMAND ----------
 
