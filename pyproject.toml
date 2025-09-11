@@ -1,0 +1,67 @@
+[project]
+name = "aptargroup"
+version = "0.1.0"
+requires-python = ">=3.9"
+dependencies = [
+    "azure-identity>=1.21.0",
+    "azure-storage-blob>=12.25.1",
+    "mindbridge-api-python-client>=1.6.2",
+    "mindbridge-pandas",
+    "openpyxl>=3.1.5",
+]
+classifiers = [
+    "Private :: Do Not Upload",
+]
+
+[dependency-groups]
+dev = [
+    "ruff>=0.11.5",
+]
+
+[tool.uv.sources]
+mindbridge-pandas = { git = "ssh://git@github.com/mindbridge-ai/mindbridge-pandas.git", tag = "v0.4.0" }
+
+[tool.uv]
+package = false
+python-downloads = "never"
+python-preference = "only-system"
+
+[tool.ruff.format]
+line-ending = "lf"
+skip-magic-trailing-comma = true
+
+[tool.ruff.lint]
+select = [
+    "ALL",
+]
+ignore = [
+    "ANN", # flake8-annotations (ANN)
+    "CPY", # flake8-copyright (CPY)
+    "DOC", # pydoclint (DOC)
+    "D", # pydocstyle (D)
+    "FA", # flake8-future-annotations (FA)
+    "ERA001", # commented-out-code (ERA001): Found commented-out code
+    "INP001", # implicit-namespace-package (INP001): File `{filename}` is part of an implicit namespace package. Add an `__init__.py`.
+    "T201", # print (T201): `print` found
+    # flake8-clean-block = "^0.1.2"
+    # flake8-encodings = "^0.5.1" https://github.com/astral-sh/ruff/issues/3278
+    # When using Ruff as a formatter, we recommend avoiding the following lint rules:
+    "W191", # tab-indentation (W191)
+    "E111", # indentation-with-invalid-multiple (E111)
+    "E114", # indentation-with-invalid-multiple-comment (E114)
+    "E117", # over-indented (E117)
+    "D206", # docstring-tab-indentation (D206)
+    "D300", # triple-single-quotes (D300)
+    "Q000", # bad-quotes-inline-string (Q000)
+    "Q001", # bad-quotes-multiline-string (Q001)
+    "Q002", # bad-quotes-docstring (Q002)
+    "Q003", # avoidable-escaped-quote (Q003)
+    "COM812", # missing-trailing-comma (COM812)
+    "COM819", # prohibited-trailing-comma (COM819)
+    # multi-line-implicit-string-concatenation (ISC002) if used without ISC001 and flake8-implicit-str-concat.allow-multiline = false
+]
+flake8-tidy-imports.ban-relative-imports = "all"
+isort.combine-as-imports = true
+isort.force-sort-within-sections = true
+isort.no-lines-before = [ "first-party", "future", "local-folder", "standard-library", "third-party" ]
+isort.split-on-trailing-comma = false
