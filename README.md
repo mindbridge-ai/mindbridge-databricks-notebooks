@@ -29,6 +29,11 @@ This repository provides examples of integrating MindBridge with Databricks for 
 - **Description**: Showcases how to pull MindBridge results back into Databricks, enabling users to perform additional analyses and visualizations using Databricks' capabilities. This allows for more in-depth exploration of MindBridge insights and the creation of tailored visualizations.
 - **Use Case**: Perfect for users looking to use Databricks for visualization and to perform advanced analysis on MindBridge results.
 
+### 7. Task_Assignment_Prototype
+
+- **Description**: Demonstrates how to automate the assignment of tasks in MindBridge using the MindBridge API. It covers connecting to a MindBridge analysis, exporting filtered data, and assigning tasks to users based on data attributes.
+- **Use Case**: Useful for teams looking to streamline and automate the task assignment process within MindBridge, ensuring tasks are distributed according to custom business rules.
+
 ## Getting Started
 
 To get started with these notebooks:
